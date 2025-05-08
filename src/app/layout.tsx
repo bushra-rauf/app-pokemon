@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-screen">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-blue-200 box-border h-full flex flex-col`}
+      > <header className= 'bg-blue-400 py-2 md:p-8 text-center text-blue-200 font-extrabold text-5xl ' >
+      Pokemon Fetch!
+  </header> 
         {children}
+        <Footer/>
       </body>
     </html>
   );
